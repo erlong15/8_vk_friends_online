@@ -8,20 +8,21 @@ def get_online_friends(login, password):
     session = vk.AuthSession(
         app_id=APP_ID,
         user_login=login,
-        user_password=password
+        user_password=password,
+        scope='friends'
     )
     try:
         api = vk.API(session)
     except vk.exceptions.VkAuthError:
         raise
-    return filter(lambda x: x['online']==1,
-                  api.friends.get(fields='first_name'))
+    return api.users.get(user_ids=api.friends.getOnline())
 
 
 def output_friends_to_console(friends_online):
     output = "{first_name} {last_name}"
     for friend in friends_online:
         print(output.format(**friend))
+
 
 if __name__ == '__main__':
     login = input('input your vk login: ')
