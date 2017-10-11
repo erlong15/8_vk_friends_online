@@ -11,10 +11,7 @@ def get_online_friends(login, password):
         user_password=password,
         scope='friends'
     )
-    try:
-        api = vk.API(session)
-    except vk.exceptions.VkAuthError:
-        raise
+    api = vk.API(session)
     return api.users.get(user_ids=api.friends.getOnline())
 
 
