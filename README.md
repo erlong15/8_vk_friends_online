@@ -1,6 +1,6 @@
-# Watcher of Friends Online
+# Watcher of VK Friends Online
 
-[TODO. There will be project description]
+It is a simple script for check your VK friends who is online now.
 
 # How to Install
 
@@ -8,6 +8,17 @@ Python 3 should be already installed. Then use pip (or pip3 if there is a confli
 
 ```bash
 pip install -r requirements.txt # alternatively try pip3
+```
+
+# How to use
+
+```
+python3 vk_friends_online.py 
+input your vk login: <your VK login>
+input your pass: 
+Name Surname
+User2 Surname2
+
 ```
 
 Remember, it is recommended to use [virtualenv/venv](https://devman.org/encyclopedia/pip/pip_virtualenv/) for better isolation.
